@@ -15,6 +15,7 @@ export const ProfileCardContainer = styled.div`
 export const ProfileCardContent = styled.main`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `
 
 export const ProfileCardHeader = styled.header`

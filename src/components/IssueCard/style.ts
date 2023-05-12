@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const IssueCardContainer = styled.div`
+export const IssueCardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
 
@@ -21,20 +22,28 @@ export const IssueCardContainer = styled.div`
   header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 
     h3 {
       font-weight: 700;
       font-size: 20px;
       color: ${(props) => props.theme['gray-100']};
+      max-width: 80%;
     }
 
     span {
+      margin-top: 6px;
       font-size: 14px;
       color: ${(props) => props.theme['gray-400']};
     }
   }
 
   p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     color: ${(props) => props.theme['gray-300']};
   }
 `

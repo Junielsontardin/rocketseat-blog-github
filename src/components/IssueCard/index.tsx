@@ -1,16 +1,34 @@
 import { IssueCardContainer } from './style'
+import ReactMarkdown from 'react-markdown'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
-export const IssueCard = () => {
+interface IssueCardProps {
+  issueNumber: number
+  title: string
+  createdAt: string
+  content: string
+}
+
+export const IssueCard = ({
+  issueNumber,
+  title,
+  createdAt,
+  content,
+}: IssueCardProps) => {
+  const distanceCreatedAtToNow = formatDistanceToNow(new Date(createdAt), {
+    addSuffix: true,
+    locale: ptBR,
+  })
+
   return (
-    <IssueCardContainer>
+    <IssueCardContainer to={`/issue-page/${issueNumber}`}>
       <header>
-        <h3>JavaScript data types and data structures</h3>
-        <span>Há 1 dia</span>
+        <h3>{title}</h3>
+        <span>{distanceCreatedAtToNow}</span>
       </header>
       <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
+        <ReactMarkdown>{content}</ReactMarkdown>
       </p>
     </IssueCardContainer>
   )

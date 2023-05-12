@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const IssueSummaryContainer = styled.div`
   display: flex;
@@ -15,13 +16,6 @@ export const IssueSummaryContainer = styled.div`
   header {
     display: flex;
     justify-content: space-between;
-
-    span {
-      font-weight: 700;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: ${(props) => props.theme['blue-500']};
-    }
 
     a {
       display: flex;
@@ -46,4 +40,11 @@ export const IssueSummaryContent = styled.div`
     line-height: ${(props) => props.theme['line-height-small']};
     color: ${(props) => props.theme['gray-100']};
   }
+`
+
+export const LinkBackHome = styled(Link)`
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: ${(props) => props.theme['blue-500']};
 `
