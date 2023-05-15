@@ -23,6 +23,7 @@ export const IssueCardContainer = styled(Link)`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 1rem;
 
     h3 {
       font-weight: 700;
@@ -32,6 +33,7 @@ export const IssueCardContainer = styled(Link)`
     }
 
     span {
+      white-space: nowrap;
       margin-top: 6px;
       font-size: 14px;
       color: ${(props) => props.theme['gray-400']};

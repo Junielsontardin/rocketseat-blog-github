@@ -4,6 +4,7 @@ import { IssueSummary } from '../../components/IssueSummary'
 import { IssueContainer } from './style'
 import { api } from '../../lib/axios'
 import { UniqueIssue } from '../../@types/issue'
+import { IssueContent } from '../../components/IssueContent'
 
 export const IssuePage = () => {
   const [issue, setIssue] = useState<UniqueIssue>()
@@ -23,17 +24,18 @@ export const IssuePage = () => {
     fetchIssue()
   }, [fetchIssue])
 
+  if (!issue) return <></>
+
   return (
     <IssueContainer>
-      {issue && (
-        <IssueSummary
-          title={issue.title}
-          hrefGithub={issue.url}
-          author={issue.user.login}
-          createdAt={issue.created_at}
-          comments={issue.comments}
-        />
-      )}
+      <IssueSummary
+        title={issue.title}
+        hrefGithub={issue.url}
+        author={issue.user.login}
+        createdAt={issue.created_at}
+        comments={issue.comments}
+      />
+      <IssueContent issueBody={issue.body} />
     </IssueContainer>
   )
 }
