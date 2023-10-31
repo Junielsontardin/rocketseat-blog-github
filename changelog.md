@@ -13,3 +13,4 @@ and this project adheres to
 - **No-task** - Creating changelog
 - **No-task** - Creating second changelog
 - **No-task** - Creating first changelog
+- **No-task** - Creating another changelog
