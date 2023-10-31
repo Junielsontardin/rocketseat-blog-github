@@ -11,3 +11,4 @@ and this project adheres to
 ### Added
 
 - **No-task** - Creating changelog
+- **No-task** - Creating first changelog
